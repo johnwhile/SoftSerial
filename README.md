@@ -1,2 +1,2 @@
 # SoftSerial
-Emulation of HardwareSerial for Arduino.   
+Arduino SoftwareSerial in Full Duplex Rx/Tx
