@@ -1,4 +1,3 @@
-#line 1 "C:\\Users\\User1\\AppData\\Local\\Arduino15\\RemoteSketchbook\\ArduinoCloud\\112600715189585168977\\Uart\\Common.h"
 #pragma once
 #include <arduino.h>
 #include <stdint.h>
