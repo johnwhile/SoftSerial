@@ -4,7 +4,7 @@ Arduino SoftwareSerial in Full Duplex Rx/Tx
 The code was needed to provide a second serial port to the **ArduinoNano** and then use the ***HardwareSerial0*** to communicate with the PC.
 > [!IMPORTANT]
 >  **Limitation:** Only one instance of ***SoftSerial*** can be created. It use Timer1 CompareA and CompareB interrupts to independently manage the write and read flow.
-
+***
 ## Packet Functions
 These functions create the byte data and the packet.
 ```
@@ -30,6 +30,7 @@ byte RequestToWrite();
 byte AvailableToWrite();
 byte AvailableToRead();
 ```
+***
 ## Write
 
 There are 3 ways to write a byte and they must not be used simultaneously.
@@ -56,7 +57,7 @@ void loop() {
       Write_Async(byte data);
 }
 ```
-
+***
 ## Read
 Reading is independent from user code, uses pin interrupt state changes from HIGH to LOW (FALLING) to start reading and store the data to the read buffer ***i_buffer_rx***. 
 If the data is not processed in time and the external terminal continues to send data, overflow bytes will be lost.
@@ -65,4 +66,5 @@ void loop() {
   if (AvailableToRead()) byte Read();
 }
 ```
+
 
