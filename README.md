@@ -19,6 +19,7 @@ Example for SERIAL_8E1.
 | 1 | 0-1 | 0-1 | 0-1 | 0-1 | 0-1 | 0-1 | 0-1 | 0-1 | 0 |
 
 ## FIFO Buffers
+Temporary entry and exit data buffers. 
 ```
 static volatile Queue<ushort> i_buffer_tx(BUFFERSIZE);
 static volatile Queue<ushort> i_buffer_rx(BUFFERSIZE);
@@ -32,7 +33,7 @@ byte AvailableToRead();
 ## Write
 
 There are 3 ways to write a byte and they must not be used simultaneously.
-1. This function does not use the timer interrupts but a simple delay. It's blocking code, so the code inside the loop will resume when the byte is completely written. For example, for a SERIAL_8N1 and baud rate 9600 = 10 bits * 104.17uS = 1.042mS
+1. This function does not use the timer interrupts but a simple delay instead. It's blocking code, so the code inside the loop will resume when the byte is completely written. For example, for a SERIAL_8N1 and baud rate 9600 = 10 bits * 104.17uS = 1.042mS
 ```
 void loop() {
   Write(byte data) //exist after 1.04mS
