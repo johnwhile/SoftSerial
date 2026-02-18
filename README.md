@@ -48,12 +48,10 @@ void loop() {
    It is necessary to control the overflow when the byte insertion speed is faster than the output flow.
 ```
 void loop() {
+    while(RequestToWrite());  //check overflow
     //exist after some micro seconds
     for (byte data = 0; data < BUFFERSIZE; data++)
-    {
-      while(!AvailableToWrite());  //check overflow
       Write_Async(byte data)
-    }
 }
 ```
 
