@@ -68,6 +68,19 @@ void loop() {
 ```
 ****
 ## Example of use
+
+```
+#include "Serial.h"
+SoftSerial mSerial;
+void setup() {
+  mSerial.Begin(2, 3, 9600, SERIAL_8N1);
+  Serial.begin(9600, SERIAL_8N1);
+}
+void loop() {
+  if (Serial.Available())
+    mSerial.Write_Async(Serial.Read());
+}
+```
 ![alt text](https://github.com/johnwhile/ArdunoNano-SoftwareSerial-Full-Duplex/blob/main/Immagine.png)
 
 
