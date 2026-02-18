@@ -66,5 +66,8 @@ void loop() {
   if (AvailableToRead()) byte Read();
 }
 ```
+****
+## Example of use
+![alt text](https://github.com/johnwhile/ArdunoNano-SoftwareSerial-Full-Duplex/blob/main/Immagine.png)
 
 
