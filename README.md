@@ -22,6 +22,11 @@ the streaming **packet** is the raw bits stream sent to interrupt functions. The
 static volatile Queue<ushort> i_buffer_tx(BUFFERSIZE);
 static volatile Queue<ushort> i_buffer_rx(BUFFERSIZE);
 ```
-
+Since writes and reads are not synchronized with the code of loop(), to avoid overflows check buffers size with
+```
+byte RequestToWrite();
+byte AvailableToWrite();
+byte AvailableToRead();
+```
 
 
